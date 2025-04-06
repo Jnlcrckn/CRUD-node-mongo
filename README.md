@@ -20,35 +20,6 @@ nodeyexpress/ ├── index.js # Servidor principal ├── public/ # Fronte
 
 ---
 
-## 🛠️ Instalación y uso local
-
-### 1. Clonar el repositorio
-
-bash
-git clone https://github.com/jnlcrckn/crud-node-mongo.git
-cd crud-node-mongo
-2. Instalar dependencias
-bash
-Copy
-Edit
-npm install
-3. Asegurarse de que MongoDB esté corriendo localmente
-bash
-Copy
-Edit
-mongod
-MongoDB debe estar disponible en mongodb://localhost:27017
-
-4. Iniciar la app
-bash
-Copy
-Edit
-npm start
-5. Abrir el frontend
-arduino
-Copy
-Edit
-http://localhost:3000/
 ✅ Funcionalidades
  Crear tareas
 
