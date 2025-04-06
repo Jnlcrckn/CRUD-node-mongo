@@ -33,14 +33,14 @@ git clone https://github.com/jnlcrckn/CRUD-node-mongo.git
 cd crud-node-mongo
 npm install
 2. Asegurarse de que MongoDB esté corriendo localmente
-bash
+```bash
 Copy
 Edit
 mongod
 MongoDB debe estar disponible en: mongodb://localhost:27017
 
 3. Iniciar la app
-bash
+```bash
 Copy
 Edit
 npm start
