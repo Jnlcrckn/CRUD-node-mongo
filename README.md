@@ -67,5 +67,9 @@ DELETE /tareas/:id
 
 Incluye timestamps automáticos (fecha de creación y actualización) gracias a la opción timestamps: true en el schema de Mongoose.
 
+### ⚠️ Vulnerabilidades conocidas
+
+Este proyecto utiliza algunas dependencias con vulnerabilidades conocidas (`mime`, `git` como dependencia interna), detectadas por `npm audit`. Actualmente no hay solución disponible, pero estas dependencias no se utilizan directamente ni afectan el funcionamiento de la API.
+
 🧑‍💻 Autor
 Jnlcrckn
