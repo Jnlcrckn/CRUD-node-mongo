@@ -1,51 +1,71 @@
-# 📝 CRUD de Tareas con Node.js, Express y MongoDB
+# 🗂️ API REST de Tareas
 
-Este proyecto es una API RESTful con un frontend básico para la gestión de tareas. Permite **crear**, **leer**, **eliminar** (y próximamente **editar**) tareas. Está construido usando Node.js, Express y MongoDB con Mongoose, y una interfaz web simple con HTML + JavaScript puro.
+Este es un proyecto backend desarrollado con **Node.js**, **Express** y **MongoDB**. Es una API REST que permite realizar operaciones CRUD sobre una lista de tareas.
 
 ---
 
 ## 🚀 Tecnologías usadas
 
-- **Node.js**
-- **Express**
-- **MongoDB**
-- **Mongoose**
-- HTML + JavaScript (Vanilla)
+- Node.js
+- Express
+- MongoDB con Mongoose
+- JavaScript
+- Express Validator
 
 ---
 
-## 📂 Estructura del proyecto
+## 📦 Instalación y ejecución
 
-nodeyexpress/ ├── index.js # Servidor principal ├── public/ # Frontend simple en HTML │ └── index.html ├── models/ │ └── tarea.model.js # Modelo de Tarea (Mongoose) ├── routes/ │ └── tarea.routes.js # Rutas CRUD ├── .gitignore ├── package.json └── README.md
+1. Clona este repositorio:
 
----
+```bash
+git clone https://github.com/Jnlcrckn/CRUD-node-mongo
+cd CRUD-node-mongo
+```
 
-✅ Funcionalidades
- Crear tareas
+Instala las dependencias:
 
- Obtener lista de tareas
+```bash
+npm install
+```
+Asegúrate de tener MongoDB corriendo localmente.
 
- Obtener tarea por ID
+Ejecuta el servidor:
 
- Eliminar tareas
+```bash
+npm run dev
+```
+El servidor se levantará en http://localhost:3000
 
- Editar tareas (próximamente)
+📚 Endpoints de la API
+🔸 Crear tarea
+POST /tareas
 
-🎯 Próximas mejoras
- Actualizar tarea (PUT)
+```bash
+{
+  "texto": "Hacer las compras"
+}
+```
+🔸 Obtener todas las tareas
+GET /tareas
 
- Autenticación de usuario
+🔸 Obtener tarea por ID
+GET /tareas/:id
 
- Deploy en la nube (Render o Railway)
+🔸 Actualizar tarea
+PUT /tareas/:id
 
- Versión con React + Tailwind
+```bash
+{
+  "texto": "Texto actualizado"
+}
+```
+🔸 Eliminar tarea
+DELETE /tareas/:id
 
-🤝 Contribuciones
-¡Este proyecto está abierto a sugerencias, forks y mejoras!
-Si querés aprender haciendo pull requests, este repo es ideal para practicar 🚀
+📌 Notas
 
-👨‍💻 Autor
-jnlcrckn
-Desarrollador Backend Jr. — apasionado por aprender y construir cosas útiles.
-📧 Contacto: jcczcom@gmail.com
-🌐 LinkedIn https://www.linkedin.com/in/jnlcrckn/
+Incluye timestamps automáticos (fecha de creación y actualización) gracias a la opción timestamps: true en el schema de Mongoose.
+
+🧑‍💻 Autor
+Jnlcrckn
