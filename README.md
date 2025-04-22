@@ -1,6 +1,6 @@
 # 📝 CRUD de Tareas con Node.js, Express y MongoDB + Autenticación JWT
 
-Este proyecto es una **API RESTful** para la gestión de tareas. Permite **crear**, **leer**, **editar** y **eliminar** tareas, con rutas protegidas mediante **autenticación con JWT**. Está construido usando Node.js, Express y MongoDB, y preparado para desplegar en la nube (Render o Railway).
+Este proyecto es una **API RESTful** para la gestión de tareas. Permite **crear**, **leer**, **editar** y **eliminar** tareas, con rutas protegidas mediante **autenticación con JWT**. Está construido usando Node.js, Express y MongoDB.
 
 ---
 
@@ -19,10 +19,6 @@ Este proyecto es una **API RESTful** para la gestión de tareas. Permite **crear
 ## 📂 Estructura del proyecto
 
 crud-backend/ ├── index.js # Servidor principal ├── .env # Variables de entorno ├── models/ │ ├── tarea.model.js # Modelo de Tarea │ └── usuario.model.js # Modelo de Usuario ├── routes/ │ ├── tarea.routes.js # Rutas protegidas de tareas │ └── auth.routes.js # Rutas públicas de autenticación ├── middleware/ │ ├── authMiddleware.js # Middleware para proteger rutas │ └── errorHandler.js # Middleware para errores ├── package.json └── README.md
-
-yaml
-Copy
-Edit
 
 ---
 
@@ -107,33 +103,29 @@ json
   "texto": "Aprender MongoDB"
 }'
 ```
-🌐 Deploy
-Puedes subirlo fácilmente a:
-
-Render
-
-Railway
-
-Solo necesitás configurar:
-
-MONGO_URI con tu base de datos en MongoDB Atlas.
-
-JWT_SECRET personalizado.
-
-Habilitar PORT.
 
 🎯 Funcionalidades
+
 ✅ Registro/Login de usuarios
+
 ✅ Autenticación con JWT
+
 ✅ CRUD completo de tareas
+
 ✅ Middleware de errores
+
 ✅ Rutas protegidas
+
 ✅ Validación de datos
+
 ✅ Listo para deploy
 
 🧑‍💻 Autor
+
 jnlcrckn – Desarrollador Backend Jr.
+
 📧 Contacto: jcczcom@gmail.com
+
 🌐 LinkedIn https://www.linkedin.com/in/jnlcrckn/
 
 
