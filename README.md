@@ -1,80 +1,140 @@
-# 📝 CRUD de Tareas con Node.js, Express y MongoDB
+# 📝 CRUD de Tareas con Node.js, Express y MongoDB + Autenticación JWT
 
-Este proyecto es una API RESTful con un frontend básico para la gestión de tareas. Permite **crear**, **leer**, **eliminar** (y próximamente **editar**) tareas. Está construido usando Node.js, Express y MongoDB con Mongoose, y una interfaz web simple con HTML + JavaScript puro.
+Este proyecto es una **API RESTful** para la gestión de tareas. Permite **crear**, **leer**, **editar** y **eliminar** tareas, con rutas protegidas mediante **autenticación con JWT**. Está construido usando Node.js, Express y MongoDB, y preparado para desplegar en la nube (Render o Railway).
 
 ---
 
 ## 🚀 Tecnologías usadas
 
 - **Node.js**
-- **Express**
-- **MongoDB**
-- **Mongoose**
-- HTML + JavaScript (Vanilla)
+- **Express.js**
+- **MongoDB + Mongoose**
+- **bcrypt** (hash de contraseñas)
+- **jsonwebtoken (JWT)** (autenticación)
+- **dotenv** (variables de entorno)
+- **express-validator** (validaciones)
 
 ---
 
 ## 📂 Estructura del proyecto
 
-nodeyexpress/ ├── index.js # Servidor principal ├── public/ # Frontend simple en HTML │ └── index.html ├── models/ │ └── tarea.model.js # Modelo de Tarea (Mongoose) ├── routes/ │ └── tarea.routes.js # Rutas CRUD ├── .gitignore ├── package.json └── README.md
+crud-backend/ ├── index.js # Servidor principal ├── .env # Variables de entorno ├── models/ │ ├── tarea.model.js # Modelo de Tarea │ └── usuario.model.js # Modelo de Usuario ├── routes/ │ ├── tarea.routes.js # Rutas protegidas de tareas │ └── auth.routes.js # Rutas públicas de autenticación ├── middleware/ │ ├── authMiddleware.js # Middleware para proteger rutas │ └── errorHandler.js # Middleware para errores ├── package.json └── README.md
+
+yaml
+Copy
+Edit
 
 ---
 
-## 🛠️ Instalación y uso local
+## 🛠️ Instalación local
 
-### 1. Clonar el repositorio
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/TU_USUARIO/crud-node-mongo.git
+cd crud-node-mongo
+Instalar dependencias:
+```
 
 ```bash
-git clone https://github.com/jnlcrckn/crud-node-mongo.git
-cd crud-node-mongo
-2. Instalar dependencias
-bash
-Copy
-Edit
 npm install
-3. Asegurarse de que MongoDB esté corriendo localmente
-bash
-Copy
-Edit
+Configurar archivo .env:
+```
+
+```bash
+env
+MONGO_URI=mongodb://localhost:27017/tareasBD
+JWT_SECRET=secreto123
+PORT=3000
+Ejecutar MongoDB en segundo plano:
+```
+
+```bash
 mongod
-MongoDB debe estar disponible en mongodb://localhost:27017
+Iniciar el servidor:
+```
 
-4. Iniciar la app
-bash
-Copy
-Edit
+```bash
 npm start
-5. Abrir el frontend
-arduino
-Copy
-Edit
-http://localhost:3000/
-✅ Funcionalidades
- Crear tareas
+🔐 Autenticación (JWT)
+🔸 Registro
+POST /auth/register
+```
 
- Obtener lista de tareas
+```bash
+json
+{
+  "email": "usuario@email.com",
+  "password": "123456"
+}
+🔸 Login
+POST /auth/login
+```
 
- Obtener tarea por ID
+```bash
+json
+{
+  "email": "usuario@email.com",
+  "password": "123456"
+}
+🔁 Devuelve un token JWT:\
+```
 
- Eliminar tareas
+```bash
+json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI..."
+}
+📋 Endpoints de Tareas (protegidos)
+Todas las rutas requieren el token en el header:
+```
 
- Editar tareas (próximamente)
+```bash
+http
+Authorization: Bearer TU_TOKEN
+```
 
-🎯 Próximas mejoras
- Actualizar tarea (PUT)
+Método	Ruta	Descripción
+GET	/tareas	Obtener todas las tareas
+POST	/tareas	Crear nueva tarea
+GET	/tareas/:id	Obtener tarea por ID
+PUT	/tareas/:id	Actualizar tarea
+DELETE	/tareas/:id	Eliminar tarea
+Ejemplo de body para POST/PUT:
 
- Autenticación de usuario
+```bash
+json
+{
+  "texto": "Aprender MongoDB"
+}'
+```
+🌐 Deploy
+Puedes subirlo fácilmente a:
 
- Deploy en la nube (Render o Railway)
+Render
 
- Versión con React + Tailwind
+Railway
 
-🤝 Contribuciones
-¡Este proyecto está abierto a sugerencias, forks y mejoras!
-Si querés aprender haciendo pull requests, este repo es ideal para practicar 🚀
+Solo necesitás configurar:
 
-👨‍💻 Autor
-jnlcrckn
-Desarrollador Backend Jr. — apasionado por aprender y construir cosas útiles.
+MONGO_URI con tu base de datos en MongoDB Atlas.
+
+JWT_SECRET personalizado.
+
+Habilitar PORT.
+
+🎯 Funcionalidades
+✅ Registro/Login de usuarios
+✅ Autenticación con JWT
+✅ CRUD completo de tareas
+✅ Middleware de errores
+✅ Rutas protegidas
+✅ Validación de datos
+✅ Listo para deploy
+
+🧑‍💻 Autor
+jnlcrckn – Desarrollador Backend Jr.
 📧 Contacto: jcczcom@gmail.com
 🌐 LinkedIn https://www.linkedin.com/in/jnlcrckn/
+
+
+
